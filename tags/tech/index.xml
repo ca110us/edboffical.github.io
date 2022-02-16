@@ -5,7 +5,30 @@
     <link>https://callous.cn/tags/tech/</link>
     <description>Recent content in tech on callous&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Jun 2021 17:00:00 +0800</lastBuildDate><atom:link href="https://callous.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Aug 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://callous.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一次 .git 泄漏引发的 “血案”</title>
+      <link>https://callous.cn/blog/tech/php/</link>
+      <pubDate>Tue, 31 Aug 2021 18:00:00 +0800</pubDate>
+      
+      <guid>https://callous.cn/blog/tech/php/</guid>
+      <description>这是一篇发表在公司内部月刊的安全文章，意在提升开发部门的安全意识，所以概念解释颇多
+ 上周，在日常漏洞扫描工作中，发现某游戏部门的 web 服务存在 .git 代码泄漏问题，并且发现服务代码存在严重的文件包含漏洞。
+扫描到这一问题后，我们第一时间确认了该系列安全问题尚未被攻击者利用（日志），之后第一时间重命名了 .git 目录。 “血案” 并未真实发生，下面只是模拟了在不知道服务器任何信息的情况下，利用各种暴露的风险因素，制造一起 “血案”。
+整体事件过程：
+1. .git 代码泄漏
+2. 代码审计
+ 发现文件包含漏洞 大量的内部接口及数据库账户密码 可直接对多个游戏的账户增加积分、金币等  3. 漏洞利用
+ 利用其接口测试代码顺利执行恶意代码  4. 服务器权限
+ 阿里云内网服务  从最终结果来看，如果攻击发生，可能导致十分严重的后果：接口泄漏、各种环境密码泄漏、内网其他服务器可能被入侵、线上数据被修改等
+此次展示过程到服务器权限这就结束了，但如果是真实攻击者进行持续渗透，内网服务器及整个业务线都有可能被攻击勒索，造成重大事故。
+本次案例也从技术细节上发现了诸多安全问题，如不严谨的函数处理、将正式环境等信息加入版本控制等
+攻击过程模拟 取得源码 通过工具就能直接从泄露的 .git 地址中，还原出项目源码，如下图 信息收集 在 web 渗透测试之前，最重要的一步是信息收集，可以说渗透的本质其实也是信息收集
+在项目的根目录中我发现了这个文件，接触过 php 的朋友应该都很熟悉，这可以给我们提供很多的服务器信息，详情可以参考官方手册 phpinfo 不过，这里有一点要说明的是，虽然我们看到了这个文件，但真实环境中不一定存在这个文件。原因就是我们得到的代码是通过 .git 目录还原过来的，是 git 中有提交记录的文件。如果开发者在正式环境中对某个文件进行了更改，并且没有进行提交，那么我们也不能通过 .git 目录还原出该文件的真实状态。所以不要把正式环境的信息加入到版本控制中，是很有道理的。
+然而这里我还是访问到了这个文件（所以这个信息收集得来全不费功夫），下面是 phpinfo 页面中查看到的这个 web 服务的根目录 代码审计 到现在为止，我们已经拿到了服务源码（其中包含数据库等敏感信息）和收集了一些服务器信息。那么接下来再来看下能否 ”攻陷“ 这台服务器。既然拿到了代码，就从代码入手吧。
+审计代码发现，在某个入口文件处，引入了一个获取数据的 php 文件，其通过获取 GET 请求中的 url 参数，从指定文件目录中获取数据来渲染页面。</description>
+    </item>
+    
     <item>
       <title>一次 lua 虚拟机堆栈溢出排查</title>
       <link>https://callous.cn/blog/tech/registry/</link>
