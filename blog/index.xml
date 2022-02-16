@@ -5,7 +5,23 @@
     <link>https://callous.cn/blog/</link>
     <description>Recent content in Blogs on callous&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 31 Aug 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://callous.cn/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Sep 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://callous.cn/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于内核 Kprobe 的服务器监控防护方案</title>
+      <link>https://callous.cn/blog/tech/kprobe/</link>
+      <pubDate>Thu, 02 Sep 2021 18:00:00 +0800</pubDate>
+      
+      <guid>https://callous.cn/blog/tech/kprobe/</guid>
+      <description>在介绍文章内容前，首先必须要提一下 HIDS
+ HIDS 全称是 Host-based Intrusion Detection System，即基于主机型入侵检测系统，专注于系统内部，监视系统全部或部分地动态的行为以及整个计算机系统的状态
+ HIDS 的一般架构是这样：
+ Agent：安装在企业内每台主机，进行系统事件监控，基线采集 管理端：管理每台agent的配置下发，状态检测，版本管理 规则分析中心：接收各种 agent 上传的数据，进行分类重整化，关联分析 展示平台：展示规则分析的结果  这篇文章主要讨论的内容是 Agent 中非常重要的系统事件监控环节，分享一种基于 Kprobe 的事件监控方案。
+Kprobe 介绍 Kprobes 是 Linux 的一种特性，它主要被用来调试内核，如探测一些内核函数是否被调用、何时被调用、函数的入参和返回值等，相比于在内核代码中用 printk 来 log 调试信息，Kprobes 的优势在于不用重新编译内核代码，并且可以跟踪内核几乎所有位置的代码，也正是因为这样，它也被用作于监控一些系统事件，就是我今天要分享的内容。
+不知道细心的朋友有没有发现，上面讲的是 Kprobes 而不是 Kprobe，网上很多文章都混用这两个词，我觉得他们是有区别的。Kprobes 上面讲了，是 Linux 的一种特性，一种轻量级 Linux 内核调试技术。而 Kprobe 仅是该技术中的一种探测手段（探针类型），除了 Kprobe ，还有 Jprobe 和 Kretprobe。
+如何利用 Kprobe 进行事件监控防护 HIDS 常常以 hook 一些 syscall 的方式来捕获异常行为。如 hook execve 来获取异常的执行命令，hook connect 来分析异常的网络行为等。
+本文的目的就是通过具体的例子，用 Kprobe 来 hook 一个具体的系统调用，并输出信息以供分析。</description>
+    </item>
+    
     <item>
       <title>一次 .git 泄漏引发的 “血案”</title>
       <link>https://callous.cn/blog/tech/php/</link>
