@@ -5,7 +5,17 @@
     <link>https://callous.cn/tags/tech/</link>
     <description>Recent content in tech on callous&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Sep 2021 18:00:00 +0800</lastBuildDate><atom:link href="https://callous.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Apr 2023 23:45:00 +0800</lastBuildDate><atom:link href="https://callous.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Server Weak Password Detection</title>
+      <link>https://callous.cn/blog/tech/weak/</link>
+      <pubDate>Wed, 19 Apr 2023 23:45:00 +0800</pubDate>
+      
+      <guid>https://callous.cn/blog/tech/weak/</guid>
+      <description>SQL Server Weak Password Detection Recently, during the development of the Windows security agent, there is a feature to perform weak password detection on SQL Server user passwords. To obtain a feasible solution, we need to first understand how SQL Server stores and verifies passwords.
+Hash algorithm and verification function The calculation and verification of password hash are actually reverse processes and former can deduce the latter. This article only focuses on versions after SQL Server 2012.</description>
+    </item>
+    
     <item>
       <title>基于内核 Kprobe 的服务器监控防护方案</title>
       <link>https://callous.cn/blog/tech/kprobe/</link>
