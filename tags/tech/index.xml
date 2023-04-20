@@ -12,8 +12,8 @@
       <pubDate>Wed, 19 Apr 2023 23:45:00 +0800</pubDate>
       
       <guid>https://callous.cn/blog/tech/weak/</guid>
-      <description>Recently, during the development of the Windows security agent, there is a feature to perform weak password detection on SQL Server user passwords. To obtain a feasible solution, we need to first understand how SQL Server stores and verifies passwords.
-Hash algorithm and verification function The calculation and verification of password hash are actually reverse processes and former can deduce the latter. This article only focuses on versions after SQL Server 2012.</description>
+      <description>Recently, during the development of the Windows security agent, there is a feature to perform weak password detection on SQL Server. To obtain a feasible solution, we need to first understand how SQL Server stores and verifies passwords.
+Hash algorithm and verification function The calculation and verification of password hash are actually reverse processes and former can deduce the latter. This article only focuses on versions after SQL Server 2012. Since that, SQL Server has been using the same algorithm, which is more universal.</description>
     </item>
     
     <item>
