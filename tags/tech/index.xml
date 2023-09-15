@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tech on callous&#39; blog</title>
-    <link>https://callous.cn/tags/tech/</link>
+    <link>https://ca110.us/tags/tech/</link>
     <description>Recent content in tech on callous&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 Apr 2023 23:45:00 +0800</lastBuildDate><atom:link href="https://callous.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Apr 2023 23:45:00 +0800</lastBuildDate><atom:link href="https://ca110.us/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL Server Weak Password Detection</title>
-      <link>https://callous.cn/blog/tech/weak/</link>
+      <link>https://ca110.us/blog/tech/weak/</link>
       <pubDate>Wed, 19 Apr 2023 23:45:00 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/weak/</guid>
+      <guid>https://ca110.us/blog/tech/weak/</guid>
       <description>Recently, during the development of the Windows security agent, there is a feature to perform weak password detection on SQL Server. To obtain a feasible solution, we need to first understand how SQL Server stores and verifies passwords.
 Hash algorithm and verification function The calculation and verification of password hash are actually reverse processes and former can deduce the latter. This article only focuses on versions after SQL Server 2012. Since that, SQL Server has been using the same algorithm, which is more universal.</description>
     </item>
     
     <item>
       <title>基于内核 Kprobe 的服务器监控防护方案</title>
-      <link>https://callous.cn/blog/tech/kprobe/</link>
+      <link>https://ca110.us/blog/tech/kprobe/</link>
       <pubDate>Thu, 02 Sep 2021 18:00:00 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/kprobe/</guid>
+      <guid>https://ca110.us/blog/tech/kprobe/</guid>
       <description>在介绍文章内容前，首先必须要提一下 HIDS
  HIDS 全称是 Host-based Intrusion Detection System，即基于主机型入侵检测系统，专注于系统内部，监视系统全部或部分地动态的行为以及整个计算机系统的状态
  HIDS 的一般架构是这样：
@@ -34,10 +34,10 @@ Kprobe 介绍 Kprobes 是 Linux 的一种特性，它主要被用来调试内核
     
     <item>
       <title>一次 .git 泄漏引发的 “血案”</title>
-      <link>https://callous.cn/blog/tech/php/</link>
+      <link>https://ca110.us/blog/tech/php/</link>
       <pubDate>Tue, 31 Aug 2021 18:00:00 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/php/</guid>
+      <guid>https://ca110.us/blog/tech/php/</guid>
       <description>这是一篇发表在公司内部月刊的安全文章，意在提升开发部门的安全意识，所以概念解释颇多
  上周，在日常漏洞扫描工作中，发现某游戏部门的 web 服务存在 .git 代码泄漏问题，并且发现服务代码存在严重的文件包含漏洞。
 扫描到这一问题后，我们第一时间确认了该系列安全问题尚未被攻击者利用（日志），之后第一时间重命名了 .git 目录。 “血案” 并未真实发生，下面只是模拟了在不知道服务器任何信息的情况下，利用各种暴露的风险因素，制造一起 “血案”。
@@ -57,20 +57,20 @@ Kprobe 介绍 Kprobes 是 Linux 的一种特性，它主要被用来调试内核
     
     <item>
       <title>一次 lua 虚拟机堆栈溢出排查</title>
-      <link>https://callous.cn/blog/tech/registry/</link>
+      <link>https://ca110.us/blog/tech/registry/</link>
       <pubDate>Thu, 03 Jun 2021 17:00:00 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/registry/</guid>
+      <guid>https://ca110.us/blog/tech/registry/</guid>
       <description>起因 这一次的问题出现在我开发的安全系统的 agent 中，在正式发布之前，测试到了这个问题，还算幸运😅 在内网测试环境中，agent 一直都没出现问题，直到运行五六天后，突然发现 lua 虚拟机崩溃了&amp;hellip;
 日志分析 {&amp;quot;level&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;ts&amp;quot;:&amp;quot;2021-05-31 19:50:27.023&amp;quot;,&amp;quot;caller&amp;quot;:&amp;quot;workers/luaworker.go:132&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;call run func failed&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;/data/dep/agent/lua/utils.lua:38: registry overflow\nstack traceback:\n\t[G]: in function &#39;gsub&#39;\n\t/data/dep/agent/lua/utils.lua:38: in function &#39;split&#39;\n\tlua/port.lua:42: in function &#39;inspect&#39;\n\tlua/port.lua:21: in main chunk\n\t[G]: ?&amp;quot;,&amp;quot;lua&amp;quot;:&amp;quot;port.lua&amp;quot;} {&amp;quot;level&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;ts&amp;quot;:&amp;quot;2021-05-31 19:51:27.104&amp;quot;,&amp;quot;caller&amp;quot;:&amp;quot;workers/luaworker.go:132&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;call run func failed&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;/data/dep/agent/lua/utils.lua:38: registry overflow\nstack traceback:\n\t[G]: in function &#39;gsub&#39;\n\t/data/dep/agent/lua/utils.lua:38: in function &#39;split&#39;\n\tlua/port.lua:42: in function &#39;inspect&#39;\n\tlua/port.lua:21: in main chunk\n\t[G]: ?&amp;quot;,&amp;quot;lua&amp;quot;:&amp;quot;port.lua&amp;quot;} {&amp;quot;level&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;ts&amp;quot;:&amp;quot;2021-05-31 19:53:27.296&amp;quot;,&amp;quot;caller&amp;quot;:&amp;quot;workers/luaworker.go:132&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;call run func failed&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;/data/dep/agent/lua/utils.lua:38: registry overflow\nstack traceback:\n\t[G]: in function &#39;gsub&#39;\n\t/data/dep/agent/lua/utils.lua:38: in function &#39;split&#39;\n\tlua/port.lua:42: in function &#39;inspect&#39;\n\tlua/port.lua:21: in main chunk\n\t[G]: ?</description>
     </item>
     
     <item>
       <title>记录一次游戏服务 oom 抢救</title>
-      <link>https://callous.cn/blog/tech/oom/</link>
+      <link>https://ca110.us/blog/tech/oom/</link>
       <pubDate>Mon, 18 Jan 2021 18:00:00 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/oom/</guid>
+      <guid>https://ca110.us/blog/tech/oom/</guid>
       <description>起因 原本愉快的周日晚上，突然有客服部门的妹子在群里说游戏挂了！进不去了！还有一堆房间不存在的问题！
 先说下这个挂掉的游戏，是从别的部门接手过来的，原班人马基本都离职了，留下一堆杂乱的资料，game 服务是用 c++ 写的。
 解救玩家 因为事情出得比较急，而且导致了大规模的玩家不能登录游戏，所以领导的首先要求是解救玩家。单从现象上分析，大致猜测是某些原因导致的 game 服务崩溃或者失去响应，导致玩家无法进入房间。玩家的 room 信息应该会存在缓存当中。大概看了下代码，定位到关键位置，贴一下部分代码：
@@ -85,10 +85,10 @@ mc := memcache.New(&amp;#34;memcache.xxxxxxx.xxxxx.xxxx.com:11211&amp;#34;) fmt.
     
     <item>
       <title>2019抓取爱奇艺视频原地址</title>
-      <link>https://callous.cn/blog/tech/iqiyi/</link>
+      <link>https://ca110.us/blog/tech/iqiyi/</link>
       <pubDate>Sat, 29 Jun 2019 23:03:01 +0800</pubDate>
       
-      <guid>https://callous.cn/blog/tech/iqiyi/</guid>
+      <guid>https://ca110.us/blog/tech/iqiyi/</guid>
       <description>写这篇文章的目的 记录一下自己做过的事和学过的东西，希望大家抱着学习的目的来探讨。
 过程 因为我对移动端的涉猎并不多，所以这次还是拿爱奇艺的网站来研究。配合 chrome dev tools （真好用），我发现pc端网页采用了hls协议，视频被切成 9 - 10 秒，这个可以用 ffmpeg 来下载列表视频，然后合成文件。因为游戏服务端的开发工作，我并没有很多空闲的时间，所以我转而研究了手机网页端。但其实两个分析的思路都差不多&amp;hellip;&amp;hellip;..
 开始 先把 chrome dev tools 的模式切换到手机模式，然后随便点进一个电视剧或者电影的播放页面，刷新之后很容易找到请求视频地址的连接，如下图： 这里大概列下参数，太多了，一些可以断定的、可为空的或者不变的我就跳过了（可以看下面的js代码，有些直接就写死了）：
